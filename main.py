@@ -34,5 +34,5 @@ if __name__ == '__main__':
         exit(0)
     else:
         print("ko")
-        send_to_telegram("Call Plex Server : ok")
+        send_to_telegram("Call Plex Server : ko")
         exit(1)
