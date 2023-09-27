@@ -10,11 +10,11 @@ import requests
 
 
 def send_to_telegram(message):
-    apiToken = '1223180354:AAHWv4JPS7bpDJmccIvoqOhNrmtsWVz8fkE'
-    chatID = '531244299'
-    apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
+    API_TOKEN = '1223180354:AAHWv4JPS7bpDJmccIvoqOhNrmtsWVz8fkE'
+    CHAT_ID = '531244299'
+    API_URL = f'https://api.telegram.org/bot{API_TOKEN}/sendMessage'
     try:
-        response = requests.post(apiURL, json={'chat_id': chatID, 'text': message})
+        response = requests.post(API_URL, json={'chat_id': CHAT_ID, 'text': message})
         print(response.text)
     except Exception as e:
         print(e)
