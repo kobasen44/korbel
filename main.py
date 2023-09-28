@@ -28,7 +28,7 @@ if __name__ == '__main__':
     if subprocess.call(cmd) == 0:
         plexReturnedOutput = subprocess.check_output(cmd)
         if EXCEPTED_PLEX_RETURNED_MESSAGE == plexReturnedOutput:
-            send_to_telegram("Call Plex Server : ok")
+            # send_to_telegram("Call Plex Server : ok")
             exit(0)
     send_to_telegram("Call Plex Server : ko")
     exit(1)
