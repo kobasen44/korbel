@@ -18,7 +18,7 @@ def send_to_telegram(message):
     API_URL = f'https://api.telegram.org/bot{API_TOKEN}/sendMessage'
     try:
         response = requests.post(API_URL, json={'chat_id': CHAT_ID, 'text': message})
-        print(response.text)
+        # print(response.text)
     except Exception as e:
         print(e)
 
