@@ -11,9 +11,7 @@ import os
 
 
 def send_to_telegram(message):
-    # API_TOKEN = '1223180354:AAHWv4JPS7bpDJmccIvoqOhNrmtsWVz8fkE'
     API_TOKEN = os.environ['API_TOKEN']
-    # CHAT_ID = '531244299'
     CHAT_ID = os.environ['CHAT_ID']
     API_URL = f'https://api.telegram.org/bot{API_TOKEN}/sendMessage'
     try:
@@ -25,7 +23,6 @@ def send_to_telegram(message):
 
 if __name__ == '__main__':
     EXCEPTED_PLEX_RETURNED_MESSAGE = b"<html><head><script>window.location = window.location.href.match(/(^.+\\/)[^\\/]*$/)[1] + 'web/index.html';</script><title>Unauthorized</title></head><body><h1>401 Unauthorized</h1></body></html>"
-    # PLEX_SERVER = 'tremoille.ddns.net:29144'
     PLEX_SERVER = os.environ['PLEX_SERVER']
 
     cmd = ['curl', '--connect-timeout', '15', PLEX_SERVER]
