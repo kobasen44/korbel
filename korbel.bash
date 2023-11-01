@@ -1,3 +1,8 @@
+#Project name : Korbel
+#Description : Call Plex Server, send message to Telegram if KO
+#Creation date : 27/09/2023
+#Author : KMO 
+
 send_to_telegram() {
     local API_TOKEN="$API_TOKEN"
     local CHAT_ID="$CHAT_ID"
@@ -15,11 +20,9 @@ send_to_telegram() {
 PLEX_SERVER="$PLEX_SERVER"
 EXPECTED_PLEX_RETURNED_MESSAGE="<html><head><script>window.location = window.location.href.match(/(^.+\\/)[^\\/]*$/)[1] + 'web/index.html';</script><title>Unauthorized</title></head><body><h1>401 Unauthorized</h1></body></html>"
 
-cmd=("curl" "--connect-timeout" "15" "$PLEX_SERVER")
-
 if cmd_output=$(curl --connect-timeout 15 "$PLEX_SERVER" 2>/dev/null); then
     if [ "$EXPECTED_PLEX_RETURNED_MESSAGE" = "$cmd_output" ]; then
-        # send_to_telegram "Call Plex Server: ok"
+        #send_to_telegram "Call Plex Server: ok"
         exit 0
     fi
 fi
