@@ -1,3 +1,4 @@
+#!/bin/bash
 # Project name : Korbel
 # Description : Call Plex Server, send message to Telegram if KO
 # Creation date : 27/09/2023
