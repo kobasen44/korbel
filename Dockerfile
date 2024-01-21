@@ -1,8 +1,9 @@
-FROM alpine:3.18
+FROM debian:12-slim
 USER root
 WORKDIR /tmp
-RUN apk add --no-cache bash curl
-RUN ls -lh /bin/bash
+RUN apt-get update -yq \
+&& apt-get install curl bash -yq 
+
 ADD korbel.bash /tmp/.
 RUN chmod +x /tmp/korbel.bash
-CMD [ "/tmp/korbel.bash" ]
+CMD [ "bash", "/tmp/korbel.bash" ]
