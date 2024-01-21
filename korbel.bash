@@ -8,7 +8,7 @@
 set -e
 
 ################ CONSTANTS #################
-ATTEMPTS_NUMBER=4
+ATTEMPTS_NUMBER=3
 EXPECTED_PLEX_RETURNED_MESSAGE="<html><head><script>window.location = window.location.href.match(/(^.+\\/)[^\\/]*$/)[1] + 'web/index.html';</script><title>Unauthorized</title></head><body><h1>401 Unauthorized</h1></body></html>"
 
 ################## FUNCTION ################
@@ -28,6 +28,7 @@ do
       exit 0
     fi
   fi
+  sleep 30
 done
 
 send_to_telegram "Call Plex Server: ko"
