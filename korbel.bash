@@ -28,7 +28,7 @@ do
       exit 0
     fi
   fi
-  sleep 2
+  sleep 15
 done
 
 send_to_telegram "Call Plex Server: ko"
