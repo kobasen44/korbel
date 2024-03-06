@@ -20,7 +20,7 @@ send_to_telegram(){
 }
 
 ################## MAIN ####################
-for ((i=1; i<=$ATTEMPTS_NUMBER; i++));
+for ((i=1; i<=ATTEMPTS_NUMBER; i++));
 do
   if output=$(curl --connect-timeout 20 "$PLEX_SERVER" 2>/dev/null); then
     if [ "$EXPECTED_PLEX_RETURNED_MESSAGE" = "$output" ]; then
